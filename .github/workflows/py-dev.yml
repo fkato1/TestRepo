@@ -21,6 +21,7 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: true
+        token: ${{ secrets.BY_REPOS_FOR_REPOS }}
 
     - name: setup node
       uses: actions/setup-node@v4
