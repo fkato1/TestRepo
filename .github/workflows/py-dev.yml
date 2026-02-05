@@ -56,6 +56,9 @@ jobs:
       working-directory: ./py-webdeployment
       run: cdk synth
 
+    - name: Verify AWS identity
+      run: aws sts get-caller-identity
+
     - name: cdk deploy
       working-directory: ./py-webdeployment
       env:
