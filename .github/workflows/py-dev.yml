@@ -25,7 +25,7 @@ jobs:
       run: npm ci
 
     - name: build web app
-      working-directory: ././web
+      working-directory: ./web
       run: npm run build
 
     - name: install AWS cdk
@@ -36,11 +36,11 @@ jobs:
       run: pip3 install -r requirements.txt
 
     - name: cdk synth
-      working-directory: ././py-webdeployment
+      working-directory: ./py-webdeployment
       run: cdk synth
 
     - name: cdk deploy
-      working-directory: ././py-webdeployment
+      working-directory: ./py-webdeployment
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
